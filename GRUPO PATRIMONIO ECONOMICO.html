@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MENÚ PRINCIPAL</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        background: url('https://www.procuraduria.gov.co/PublishingImages/patrullera%20policia%201904.jpg') no-repeat center center/cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+    }
+
+    /* TÍTULO FUERA DEL CUADRO */
+    .titulo-principal {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 5px black;
+    }
+
+    /* CONTENEDOR */
+    .contenedor {
+        background: rgba(0,0,0,0.6);
+        width: 90%;
+        max-width: 400px;
+        padding: 30px;
+        border-radius: 15px;
+        position: relative;
+    }
+
+    /* SUBTÍTULO DENTRO DEL CUADRO */
+    .subtitulo {
+        font-size: 20px;
+        margin-bottom: 25px;
+        font-weight: bold;
+    }
+
+    .boton {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin: 15px 0;
+        font-size: 18px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        background: #00bcd4;
+        color: white;
+    }
+
+    .boton:hover {
+        background: #0097a7;
+    }
+
+    /* BOTÓN EXIT */
+    .exit {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .exit:hover {
+        color: red;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- TÍTULO FUERA DEL CUADRO -->
+<div class="titulo-principal">
+    GRUPO DE PATROMONIO ECONÓMICO
+</div>
+
+<!-- CUADRO -->
+<div class="contenedor">
+    <div class="exit" onclick="salir()">✖</div>
+
+    <!-- SUBTÍTULO DENTRO DEL CUADRO -->
+    <div class="subtitulo">
+        Seleccione una opción
+    </div>
+
+    <button class="boton" onclick="redirigir('https://correopoliciagov-my.sharepoint.com/:x:/g/personal/rommy_roncancio_correo_policia_gov_co/IQBBCYfWzgAuQbguGJUgHHNaAZQM5l1V0R3BRfpZmMpMmH4?e=hUvmGa')">
+        SERVICIO SIJIN 2
+    </button>
+
+    <button class="boton" onclick="redirigir('CONTROL AUTOMOTORES PATRIMONIO.html')">
+        ASIGNACIÓN VEHÍCULOS
+    </button>
+
+    <button class="boton" onclick="redirigir('https://www.wikipedia.org')">
+        NOVEDADES PATRIMONIO
+    </button>
+</div>
+
+<script>
+    function redirigir(url) {
+        window.location.href = url;
+    }
+
+    function salir() {
+        window.close();
+        alert("Saliendo del formulario");
+    }
+</script>
+
+</body>
+</html>
