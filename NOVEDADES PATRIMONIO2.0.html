@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro de Evento</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:20px;
+    background: url('sijin.png') no-repeat center center fixed;
+    background-size: cover;
+}
+form{
+    background:#fff;
+    padding:20px;
+    border-radius:10px;
+    max-width:700px;
+    margin:auto;
+}
+h2{
+    text-align:center;
+}
+fieldset{
+    border:1px solid #ccc;
+    margin-bottom:15px;
+    padding:15px;
+    border-radius:8px;
+}
+legend{
+    font-weight:bold;
+}
+label{
+    display:block;
+    margin-top:10px;
+}
+input,  textarea{
+    width:97%;
+    padding:8px;
+    margin-top:5px;
+}
+select {
+    width:100%;
+    padding:8px;
+    margin-top:5px;
+}
+textarea{
+    resize:vertical;
+}
+button{
+    margin-top:20px;
+    padding:12px;
+    width:100%;
+    background:#0078d4;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+}
+</style>
+</head>
+
+<body>
+
+<form id="eventoForm">
+<h2>REGISTRO DE EVENTO PATRIMONIO ECONÓMICO</h2>
+
+<fieldset>
+<legend>Datos funcinarios </legend>
+
+<label>Consecutivo</label>
+<input type="text" id="consecutivo" required placeholder="0001">
+
+<label>Fecha y Hora Registro</label>
+<input type="text" id="fechaHoraRegistro" readonly>
+
+<label>Funcionario que conocio el caso</label>
+<select id="funcionario">
+<option>TE. RONCANCIO RODRIGUEZ ROMMY STEEL</option>
+<option>IT. AVILAN VENEGAS DANIEL FERNANDO</option>
+<option>SI. HERNANDEZ MERCADO JULIO CESAR</option>
+<option>SI. MOSQUERA ARDILA MIGUEL ANGEL</option>
+<option>SI. VIÑA CRUZ BRIAN ALEXIS</option>
+<option>SI. VASQUEZ RODRIGUEZ OSCAR LEONARDO</option>
+<option>PT. ALVAREZ CARDENAS DAVISON</option>
+<option>PT. RODRIGUEZ PEÑA MIGUEL ANGEL</option>
+<option>PT. OVIEDO RAMIREZ JUAN SEBASTIAN</option>
+<option>PT. CARDALES LEON CARLOS RENE</option>
+<option>PT. LARA ESTRADA LILIANA</option>
+<option>PT. HERRERA LOPEZ YONNY ALEXANDER</option>
+<option>PT. PEÑA ALVAREZ JUAN ESTEBAN</option>
+<option>PT. RAMIREZ TORRES DANIELA ALEJANDRA</option>
+<option>PT. CARDENAS FERNANDEZ ANGIE DANIELA</option>
+<option>PT. RENGIFO CAICEDO ANDRES FELIPE</option>
+</select>
+
+</fieldset>
+
+<fieldset>
+<legend>Datos del Evento</legend>
+
+<label>Fecha del Evento</label>
+<input type="date" id="fechaEvento" required onchange="calcularDia()">
+
+<label>Día de la Semana</label>
+<input type="text" id="diaSemana" readonly>
+
+<label>Hora del Evento</label>
+<input type="time" id="horaEvento" required>
+
+<label>Municipio</label>
+<select id="municipio">
+<option>Sibaté</option>
+<option>Soacha</option>
+</select>
+
+<label>Estación</label>
+<select id="estacion">
+<option>Capilla</option>
+<option>San Mateo</option>
+<option>Chico</option>
+<option>Cazuca</option>
+<option>Sibaté</option>
+<option>León XIII</option>
+<option>Ciudad Verde</option>
+<option>Centro</option>
+<option>Compartir</option>
+</select>
+
+<label>Zona</label>
+<select id="zona">
+<option>Rural</option>
+<option>Urbana</option>
+</select>
+
+<label>Zona de Atención</label>
+<input type="text" id="zonaAtencion">
+
+<label>Barrio</label>
+<input type="text" id="barrio">
+
+<label>Dirección</label>
+<input type="text" id="direccion">
+</fieldset>
+
+<fieldset>
+<legend>Coordenadas (Automáticas)</legend>
+
+<label>Latitud</label>
+<input type="text" id="latitud" readonly>
+
+<label>Longitud</label>
+<input type="text" id="longitud" readonly>
+</fieldset>
+
+<fieldset>
+<legend>Características del Hecho</legend>
+
+<label>Evento</label>
+<select id="evento">
+<option>Hurto a vehículos</option>
+<option>Hurto a motocicletas</option>
+<option>Hurto a personas</option>
+<option>Hurto a residencias</option>
+<option>Hurto a comercio</option>
+</select>
+
+<label>Modalidad</label>
+<select id="modalidad">
+<option>Halado</option>
+<option>Atraco</option>
+<option>Oportunidad</option>
+<option>Engaño</option>
+<option>Cosquilleo</option>
+<option>Raponazo</option>
+<option>Otro</option>
+<option>No aplica</option>
+</select>
+
+<label>Arma Empleada</label>
+<select id="arma">
+<option>Arma de fuego</option>
+<option>Arma cortopunzante</option>
+<option>Arma contundente</option>
+<option>Otra</option>
+<option>No aplica</option>
+</select>
+
+<label>Elemento Hurtado</label>
+<select id="elemento">
+<option>Vehículo</option>
+<option>Camión</option>
+<option>Tracto camión</option>
+<option>Motocicleta</option>
+<option>Residencia</option>
+<option>Establecimiento comercial</option>
+<option>Celular</option>
+<option>Abigeato</option>
+<option>Otros</option>
+</select>
+
+<label>Marca</label>
+<input type="text" id="marca">
+
+<label>Línea</label>
+<input type="text" id="linea">
+
+<label>Placa</label>
+<input type="text" id="placa">
+</fieldset>
+
+<fieldset>
+<legend>Datos de la Víctima</legend>
+
+<label>Nombre Víctima</label>
+<input type="text" id="victima">
+
+<label>Cédula</label>
+<input type="text" id="cedula">
+
+<label>Celular</label>
+<input type="tel" id="celular">
+
+<label>Correo</label>
+<input type="email" id="correo">
+
+<label>Género</label>
+<select id="genero">
+<option>Masculino</option>
+<option>Femenino</option>
+<option>Otro</option>
+</select>
+</fieldset>
+
+<fieldset>
+<legend>Gestión Investigativa</legend>
+
+<label>Hechos</label>
+<textarea id="hechos"></textarea>
+
+<label>NUNC Denuncia</label>
+<input type="text" id="nunc" inputmode="numeric" pattern="\d{21}" maxlength="21">
+
+<label>Recolectó Videos</label>
+<select id="videosRecolecto">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<label>Radico preservación Videos</label>
+<select id="videosPreservacion">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<label>Entrevistas</label>
+<select id="entrevistas">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<label>Toma CDR´s</label>
+<select id="cdr">
+<option>Si</option>
+<option>No</option>
+</select>
+
+<label>Observaciones</label>
+<textarea id="observaciones"></textarea>
+</fieldset>
+
+<button type="submit">ENVIAR</button>
+
+</form>
+
+<script>
+// =========================
+// Fecha y hora actual
+// =========================
+const ahora = new Date();
+document.getElementById("fechaHoraRegistro").value = ahora.toLocaleString();
+
+// =========================
+// Día de la semana
+// =========================
+function calcularDia(){
+    const fechaVal = document.getElementById("fechaEvento").value;
+    if (!fechaVal) { document.getElementById("diaSemana").value = ""; return; }
+    // Usar getDay con una fecha local segura
+    const fecha = new Date(fechaVal + "T12:00:00"); // evita problemas de zona horaria en móviles
+    const dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+    document.getElementById("diaSemana").value = dias[fecha.getDay()];
+}
+
+// =======================================================
+// Coordenadas automáticas (robusto para móviles)
+// - Intenta al cargar
+// - Reintenta con gesto del usuario (tap/click)
+// - Fallback: watchPosition si getCurrentPosition falla
+// =======================================================
+function setCoords(lat, lon){
+    document.getElementById("latitud").value = lat ?? "";
+    document.getElementById("longitud").value = lon ?? "";
+}
+
+function solicitarUbicacion(useWatchFallback = true){
+    if (!("geolocation" in navigator)) {
+        console.warn("Geolocalización no disponible en este navegador");
+        setCoords("", "");
+        return;
+    }
+
+    const options = { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 };
+
+    navigator.geolocation.getCurrentPosition(
+        (pos) => setCoords(pos.coords.latitude, pos.coords.longitude),
+        (err) => {
+            console.warn("getCurrentPosition error:", err?.code, err?.message);
+            if (useWatchFallback) {
+                // Fallback: intentar watchPosition (a veces funciona mejor en móviles)
+                const watchId = navigator.geolocation.watchPosition(
+                    (pos2) => {
+                        setCoords(pos2.coords.latitude, pos2.coords.longitude);
+                        navigator.geolocation.clearWatch(watchId);
+                    },
+                    (err2) => {
+                        console.warn("watchPosition error:", err2?.code, err2?.message);
+                        setCoords("", "");
+                    },
+                    options
+                );
+            } else {
+                setCoords("", "");
+            }
+        },
+        options
+    );
+}
+
+// Intento al cargar (requiere HTTPS para que el permiso se muestre)
+window.addEventListener("load", () => {
+    solicitarUbicacion(true);
+});
+
+// Reintento tras primer interacción del usuario (necesario en iOS/Safari)
+let reintentoHecho = false;
+["click","touchstart"].forEach(evt => {
+    window.addEventListener(evt, () => {
+        if (!reintentoHecho && (!document.getElementById("latitud").value || !document.getElementById("longitud").value)) {
+            reintentoHecho = true;
+            solicitarUbicacion(true);
+        }
+    }, { once: true });
+});
+
+// ==================================================================
+// Integración con Power Automate + Excel en línea (sin cambios funcionales)
+// ==================================================================
+document.getElementById("eventoForm").addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const data = {
+        funcionario: document.getElementById("funcionario").value,
+        consecutivo: document.getElementById("consecutivo").value,
+        fechaHoraRegistro: document.getElementById("fechaHoraRegistro").value,
+
+        fechaEvento: document.getElementById("fechaEvento").value,
+        diaSemana: document.getElementById("diaSemana").value,
+        horaEvento: document.getElementById("horaEvento").value,
+        municipio: document.getElementById("municipio").value,
+        estacion: document.getElementById("estacion").value,
+        zona: document.getElementById("zona").value,
+        zonaAtencion: document.getElementById("zonaAtencion").value,
+        barrio: document.getElementById("barrio").value,
+        direccion: document.getElementById("direccion").value,
+
+        latitud: document.getElementById("latitud").value,
+        longitud: document.getElementById("longitud").value,
+
+        evento: document.getElementById("evento").value,
+        modalidad: document.getElementById("modalidad").value,
+        arma: document.getElementById("arma").value,
+        elemento: document.getElementById("elemento").value,
+        marca: document.getElementById("marca").value,
+        linea: document.getElementById("linea").value,
+        placa: document.getElementById("placa").value,
+
+        victima: document.getElementById("victima").value,
+        cedula: document.getElementById("cedula").value,
+        celular: document.getElementById("celular").value,
+        correo: document.getElementById("correo").value,
+        genero: document.getElementById("genero").value,
+
+        hechos: document.getElementById("hechos").value,
+        nunc: document.getElementById("nunc").value,
+        videosRecolecto: document.getElementById("videosRecolecto").value,
+        videosPreservacion: document.getElementById("videosPreservacion").value,
+        entrevistas: document.getElementById("entrevistas").value,
+        cdr: document.getElementById("cdr").value,
+        observaciones: document.getElementById("observaciones").value
+    };
+
+    try {
+        const res = await fetch("https://default6ced28707308471eaf1561b2f796b4.9c.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/e5445798d851485f8ff3f2b276b6cc8b/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=04doCcvBYpVRZHSGgyHVw1FYt6MTkltTn8olxtYqths", {
+            method: "POST",
+            headers: { "Content-Type":"application/json" },
+            body: JSON.stringify(data)
+        });
+
+        if (!res.ok) throw new Error("Respuesta no OK del flujo");
+        alert("Formulario enviado correctamente");
+        // this.reset(); // opcional
+        document.getElementById("eventoForm").reset(); // Limpia el formulario
+        document.getElementById("fechaHoraRegistro").value = (new Date()).toLocaleString(); //
+
+    } catch (err) {
+        console.error(err);
+        alert("Error al enviar");
+    }
+});
+</script>
+
+</body>
+</html>
