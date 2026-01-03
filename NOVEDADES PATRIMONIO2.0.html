@@ -159,8 +159,8 @@ button{
 <fieldset>
 <legend>Características del Hecho</legend>
 
-<label>Línea</label>
-<select id="linea">
+<label>Grupo</label>
+<select id="grupo">
 <option>Patrimonio Economico</option>
 <option>Vida </option>
 <option>Otro</option>
@@ -408,6 +408,7 @@ document.getElementById("eventoForm").addEventListener("submit", async function(
         latitud: document.getElementById("latitud").value,
         longitud: document.getElementById("longitud").value,
 
+        grupo: document.getElementById("grupo").value,
         evento: document.getElementById("evento").value,
         modalidad: document.getElementById("modalidad").value,
         arma: document.getElementById("arma").value,
@@ -418,6 +419,7 @@ document.getElementById("eventoForm").addEventListener("submit", async function(
 
         victima: document.getElementById("victima").value,
         cedula: document.getElementById("cedula").value,
+        numero: document.getElementById("numero").value,
         celular: document.getElementById("celular").value,
         correo: document.getElementById("correo").value,
         genero: document.getElementById("genero").value,
@@ -453,4 +455,5 @@ document.getElementById("eventoForm").addEventListener("submit", async function(
 
 </body>
 </html>
+
 
