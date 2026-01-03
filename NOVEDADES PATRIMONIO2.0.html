@@ -159,6 +159,13 @@ button{
 <fieldset>
 <legend>Características del Hecho</legend>
 
+<label>Línea</label>
+<select id="linea">
+<option>Patrimonio Economico</option>
+<option>Vida </option>
+<option>Otro</option>
+</select>
+    
 <label>Evento</label>
 <select id="evento">
 <option>Hurto a vehículos</option>
@@ -166,6 +173,11 @@ button{
 <option>Hurto a personas</option>
 <option>Hurto a residencias</option>
 <option>Hurto a comercio</option>
+<option>Homicidio</option>
+<option>Homicidio multiple</option>
+<option>Lesiones personales</option>
+<option>Tentativa de Homicidio</option>
+<option>Otro</option>
 </select>
 
 <label>Modalidad</label>
@@ -176,6 +188,11 @@ button{
 <option>Engaño</option>
 <option>Cosquilleo</option>
 <option>Raponazo</option>
+<option>Intolerancia/riñas</option>
+<option>Sicariato</option>
+<option>Ajuste de cuentas</option>
+<option>Feminicidio</option>
+<option>Violencia intrafamiliar</option>
 <option>Otro</option>
 <option>No aplica</option>
 </select>
@@ -218,9 +235,20 @@ button{
 <label>Nombre Víctima</label>
 <input type="text" id="victima">
 
-<label>Cédula</label>
-<input type="text" id="cedula">
+<label>Tipo documento de identidad</label>
+<select id="cedula">
+<option>Cédula de ciudadanía</option>
+<option>Cédula de extranjeria</option>
+<option>Cédula venezolna</option>
+<option>Tarjeta de Identidad</option>
+<option>Registro Cívil</option>
+<option>Pasaporte</option>
+<option>Otros</option>
+</select>
 
+<label>Número de identidad</label>
+<input type="text" id="numero">
+    
 <label>Celular</label>
 <input type="tel" id="celular">
 
@@ -425,3 +453,4 @@ document.getElementById("eventoForm").addEventListener("submit", async function(
 
 </body>
 </html>
+
